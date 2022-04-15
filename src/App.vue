@@ -2,18 +2,15 @@
 <header><h1>My Friends list</h1></header>
 <ul>
 <friend-contact
-name="Aadya"
-phone-number="0123"
-email-address="s@gmail.com"
-
-
-></friend-contact>
-<friend-contact
-name="Aashmi"
-phone-number="230123"
-email-address="sad@gmail.com"
+v-for="friend in friends"
+:key="friend.id"
+:name="friend.name"
+:phone-number="friend.phone"
+:email-address="friend.email"
+:is-favourite="friend.isFavourite"
 
 ></friend-contact>
+
 </ul>
 </template>
 <script>
@@ -24,13 +21,15 @@ export default{
             id:1,
             name:'Sahitya',
             email:'sahitya.v@gmail.com',
-            phone:'012345'
+            phone:'012345',
+            isFavourite:false
         },
         {
             id:2,
             name:'Aditi',
             email:'aditi.k@gmail.com',
-            phone:'0123455'
+            phone:'0123455',
+            isFavourite:true
         }
         ]
         }
